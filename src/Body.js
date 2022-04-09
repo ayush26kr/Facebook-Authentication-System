@@ -11,7 +11,7 @@ function Body(){
 
         var users=JSON.parse(localStorage.getItem('user')||'[]')
 
-        var newuser={  //object dec
+        var newuser={  //object declaration
             name:name,
             username:username,
             password:password
