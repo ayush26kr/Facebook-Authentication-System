@@ -6,8 +6,21 @@ function Body(){
     const[username,setusername]=useState('')
     const[password,setpassword]=useState('')
 
-    function registeruser(){
-        alert("working")
+    function registeruser(event){
+        event.preventDefault()
+
+        var users=JSON.parse(localStorage.getItem('user')||'[]')
+
+        var newuser={  //object dec
+            name:name,
+            username:username,
+            password:password
+        }
+        users.push(newuser)
+
+        localStorage.setItem('user',JSON.stringify(users)) 
+        alert("New user Registered Successfully")
+        
     }
 
     return <div>
